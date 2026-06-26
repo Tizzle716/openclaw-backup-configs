@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "MONO-REPO BOUNDARY ENFORCEMENT:",
+    "You are operating in the LockedIn Labs OpenClaw workspace.",
+    "- /docs: READ-ONLY system manifests and blueprints",
+    "- /skills: READ-ONLY agent capabilities",
+    "- /projects: READ-WRITE active codebases",
+    "- NEVER access files outside these three directories",
+    "- NEVER write secrets to any file \u2014 use OpenBao dynamically",
+    "- For secret access: docker exec -e VAULT_ADDR=http://localhost:8200 -e VAULT_TOKEN=root-token open-bao bao kv get -mount=secret <path>"
+  ]
+}

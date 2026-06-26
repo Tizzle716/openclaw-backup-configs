@@ -1,0 +1,1 @@
+/home/viktor-admin/lockin-labs-office/department_context/ops/system_blueprint.md

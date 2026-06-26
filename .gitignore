@@ -1,0 +1,299 @@
+# =============================================================================
+# openclaw-github-sync .gitignore
+# Generated: 2026-06-26
+# Purpose: Aggressively protect secrets while allowing config/code sync
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# CREDENTIALS & SECRETS (NEVER COMMIT)
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.env
+**/.env
+**/.env.*
+
+# OpenClaw secrets
+.openclaw/openclaw.json
+.openclaw/openclaw.json.*
+.openclaw/credentials/
+.openclaw/identity/
+.openclaw/devices/
+
+# API tokens and auth files
+**/auth*.json
+**/auth-profiles.json
+**/device-auth.json
+**/device.json
+**/paired.json
+**/pending.json
+**/*token*
+**/*secret*
+**/*credential*
+.openbao-unseal-key
+.apilocker/
+
+# SSH keys
+.ssh/
+.gnupg/
+
+# Cloud provider credentials
+.aws/
+.docker/config.json
+
+# ---------------------------------------------------------------------------
+# RUNTIME STATE & DATABASES (REGENERATED, NOT SOURCE)
+# ---------------------------------------------------------------------------
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+
+# Session data
+**/sessions/*.jsonl
+**/sessions/sessions.json
+**/sessions/sessions.json.*
+
+# Cache and temp
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/.cache/
+.cache/
+tmp/
+/tmp/
+**/tmp/
+
+# Redis state files
+**/dump.rdb
+**/redis-state.json
+
+# ---------------------------------------------------------------------------
+# BINARY & BUILD ARTIFACTS
+# ---------------------------------------------------------------------------
+*.tar.gz
+*.tar
+*.zip
+*.tgz
+*.dmg
+*.exe
+*.dll
+*.so
+*.dylib
+*.wasm
+*.o
+*.a
+*.class
+*.jar
+
+# Node
+**/node_modules/
+**/.npm/
+.npm/
+.npm-global/
+package-lock.json
+
+# Python
+**/venv/
+**/.venv/
+**/.virtualenv/
+**/dist/
+**/build/
+**/*.egg-info/
+
+# Go
+**/vendor/
+
+# ---------------------------------------------------------------------------
+# LOGS & AUDIT TRAILS
+# ---------------------------------------------------------------------------
+*.log
+**/*.log
+logs/
+**/logs/
+.openclaw/logs/
+
+# ---------------------------------------------------------------------------
+# CONFIG BACKUPS & CLUTTER
+# ---------------------------------------------------------------------------
+*.bak
+*.bak.*
+*.clobbered.*
+*.fixed
+*.last-good
+*.backup
+
+# ---------------------------------------------------------------------------
+# OS & EDITOR ARTIFACTS
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.Trash-*
+.bash_history
+.bash_logout
+.profile
+.bashrc
+.bashrc.*
+
+# ---------------------------------------------------------------------------
+# IDE & TOOL STATE
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.sublime-*
+.windsurf-server/
+.codeium/
+
+# ---------------------------------------------------------------------------
+# DOCKER (may contain secrets in env vars)
+# ---------------------------------------------------------------------------
+docker-compose.yml
+docker-compose.yml.*
+Dockerfile
+**/docker-compose.yml
+**/docker-compose.yml.*
+
+# ---------------------------------------------------------------------------
+# LARGE MODEL FILES
+# ---------------------------------------------------------------------------
+*.bin
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.onnx
+**/checkpoints/
+
+# ---------------------------------------------------------------------------
+# SYSTEM FILES
+# ---------------------------------------------------------------------------
+snap/
+.mcp.json
+Caddyfile
+current_node_connection_details.json
+resource_config.json
+resource_scheduler.py
+system-source-of-truth.yaml
+tunnel_config.json
+verify_manifest.py
+audit_logs.sh
+disk-alert.sh
+ingest_docs.py
+generate-agent-workspace.py
+webhook-handler.py
+agent_edge_client.py
+agent_edge_client.py.*
+test_zai.js
+
+# ---------------------------------------------------------------------------
+# RCLONE & BACKUP
+# ---------------------------------------------------------------------------
+rclone-exclude.txt
+**/*.tar.gz
+
+# ---------------------------------------------------------------------------
+# SPECIFIC DIRECTORIES (too large or sensitive)
+# ---------------------------------------------------------------------------
+hindsight/
+boardroom/
+sovereign-core/
+production-floor/
+manager-unified/
+freelance-engine/
+integrity-checker/
+watchdog/
+pipedream-gate/
+lossless_memory/
+paperclip/
+aissc-resource-architect/
+aissc-supermemory-worker/
+ai-video-gen/
+technical-ops/
+mirror_apilocker_to_bao.sh
+
+# ---------------------------------------------------------------------------
+# ALLOWED PATTERNS (things we want to sync)
+# Explicitly include these after the blanket exclusions
+# ---------------------------------------------------------------------------
+
+# This .gitignore itself
+!.gitignore
+
+# OpenClaw configs (the .gitignore already excludes secrets above)
+!.openclaw/
+!.openclaw/workspace/
+!.openclaw/agents/
+!.openclaw/plugins/
+!.openclaw/skills/
+!.openclaw/completions/
+!.openclaw/plugin-skills/
+!.openclaw/flows/
+!.openclaw/tasks/
+
+# OpenCode configs
+!.opencode/
+!.opencode/**/*.json
+!.opencode/**/*.jsonc
+!.opencode/**/*.md
+
+# Claude configs & skills
+!.claude/
+!.claude/skills/
+!.claude/**/SKILL.md
+!.claude/**/*.json
+
+# OpenClaw workspace & extensions
+!openclaw-workspace/
+!openclaw-workspace/**/*.md
+!openclaw-workspace/**/*.json
+!openclaw-workspace/**/SKILL.md
+
+# Learnings across projects
+!.learnings/
+!**/.learnings/
+!**/.learnings/*.md
+
+# Custom scripts
+!scripts/
+!scripts/**/*.sh
+!scripts/**/*.js
+!scripts/**/*.py
+
+# Lockin Labs Office (project code, not secrets)
+!lockin-labs-office/
+lockin-labs-office/.env
+lockin-labs-office/**/.env
+lockin-labs-office/fish-speech/
+
+# Assets (if small)
+!assets/
+
+# Config files
+!.gitconfig
+!.npmrc
+!omo.config.json
+!opencode.json
+!skills-lock.json
+
+# Workspace identity files (safe markdown)
+!**/AGENTS.md
+!**/SOUL.md
+!**/IDENTITY.md
+!**/USER.md
+!**/TOOLS.md
+!**/HEARTBEAT.md
+!**/BOOTSTRAP.md
+!**/MEMORY.md
+!**/LEARNINGS.md
+!**/ERRORS.md
+!**/FEATURE_REQUESTS.md
+
+# ---------------------------------------------------------------------------
+# END
+# ---------------------------------------------------------------------------

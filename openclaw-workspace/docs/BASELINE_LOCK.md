@@ -1,0 +1,1 @@
+/home/viktor-admin/lockin-labs-office/agent-files/BASELINE_LOCK.md

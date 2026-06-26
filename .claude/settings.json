@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "supermemory": {
+      "url": "https://mcp.supermemory.ai/sse",
+      "headers": {
+        "Authorization": "Bearer sm_CpzeFSuXLCEkQPQXJrzUfz_HtKXoC9MJVWJKllcli35xXQCELv76hIfJgPDacluP7kI7wxndQzjbMB99RA2Bvho",
+        "x-sm-project": "openclaw-docs"
+      }
+    },
+    "apilocker": {
+      "command": "apilocker",
+      "args": [
+        "mcp"
+      ]
+    }
+  }
+}
