@@ -1,0 +1,12 @@
+[safe]
+	directory = /home/viktor-admin/aissc-resource-architect
+	directory = /home/viktor-admin/aissc-resource-architect
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	name = openclaw-github-sync
+	email = sync@openclaw.local

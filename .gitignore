@@ -236,17 +236,22 @@ mirror_apilocker_to_bao.sh
 !.openclaw/flows/
 !.openclaw/tasks/
 
-# OpenCode configs
+# OpenCode configs (exclude configs containing secrets)
 !.opencode/
-!.opencode/**/*.json
 !.opencode/**/*.jsonc
 !.opencode/**/*.md
+!.opencode/.omo/
+.opencode/opencode.json
+.opencode/opencode.json.*
 
-# Claude configs & skills
+# Claude configs & skills (exclude session/transcript data with possible secrets)
 !.claude/
 !.claude/skills/
 !.claude/**/SKILL.md
-!.claude/**/*.json
+!.claude/settings.json
+.claude/transcripts/
+.claude/projects/
+.claude/backups/
 
 # OpenClaw workspace & extensions
 !openclaw-workspace/
@@ -274,12 +279,12 @@ lockin-labs-office/fish-speech/
 # Assets (if small)
 !assets/
 
-# Config files
+# Config files (exclude those with embedded secrets)
 !.gitconfig
 !.npmrc
-!omo.config.json
-!opencode.json
-!skills-lock.json
+opencode.json
+omo.config.json
+skills-lock.json
 
 # Workspace identity files (safe markdown)
 !**/AGENTS.md
